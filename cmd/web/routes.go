@@ -22,7 +22,5 @@ func routes(app *config.Appconfig) http.Handler {
 
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
-	
-
 	return mux
 }
